@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
+import ProfilePage from './components/profilePage/profilePage';
 
 
 
@@ -15,6 +16,7 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<App/>} />
+        <Route path="/profile" element={<ProfilePage/>} />
       </Routes>
     </Router>
   </React.StrictMode>
