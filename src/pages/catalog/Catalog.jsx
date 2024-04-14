@@ -1,56 +1,42 @@
 import React from 'react'
+import './catalog.css';
+import UseGlobalStore from '../../store/store';
 
 export default function Catalog() {
 
+    const variables = UseGlobalStore((state) => state.variables)
 
+    const allBooks = variables.allNonBooks;
 
   return (
-   
-    <div className="container">
 
-    <h1 className="text-danger my-title">Characters</h1>
-         <div className="overflow-x-auto" style={{ maxWidth: "100%", overflowX: "scroll" }}>
-             <div className="d-flex">
-             {randomOrderPeople.map((item, index) => {
+    <div className="container row">
+         <h1 className="text-danger my-title">Libros disponibles</h1>
+            <div className="d-flex"> 
+            {allBooks?.map((item, index) => {
                 return (
                     <div
-                        className="card me-3 border border-dark rounded"
-                        style={{ minWidth: "225px", flex: "0 0 auto" }}
-                        key={index}
-                    >
-                        <img
-                            src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`}
-                            className="card-img-top"
-                            style={{ width: '14rem' }}
-                            alt="..."
-                        
-                        />
-                        <div className="card-body">
-                            <h5 className="mb-2 text-lg font-bold">{item.name}</h5>
-                            <div className="flex flex-row pt-2">
-                                <Link to={`/singleCard/${item.uid}`}>
-                                    <button className="btn btn-dark">
-                                        Learn More!
-                                    </button>
-                                </Link>
-                                <a href="#" className="btn cursor-pointer">
-                                    <i
-                                        className="fas fa-heart"
-                                        onClick={() => actions.favoriteCheck(item.name)}
-                                    ></i>
-                                </a>
-                            </div>
-                        </div>
+                    className="card"
+                    /* style={{ minWidth: "225px", flex: "0 0 auto" }} */
+                    key={index}
+                >
+                    <img
+                        src="https://cdn.wallapop.com/images/10420/gj/ou/__/c10420p1000530357/i4861653056.jpg?pictureSize=W640"
+                        className="card-img-top"
+                        style={{ width: '16rem' }}
+                        alt="..."
+                    
+                    />
+                    <div className="card-body">
+                        <h5 className="mb-2 text-lg font-bold">{item.title}</h5>
+            
                     </div>
-                );
-            })}
-        </div>
+                </div>
+            )})}
+        
+            </div>
+
     </div>
-
-
-
-
-
-
   )
+   
 }

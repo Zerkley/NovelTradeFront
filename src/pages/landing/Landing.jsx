@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './Landing.css';
 
 
@@ -11,7 +12,7 @@ function Landing() {
           <div className="heroInner">
             <span>
               <h1>Bienvenidos a NovelTrade</h1>
-              <Link to={`/CardPlanets/${item.uid}`}>
+              <Link to="/Catalog">
                                             <button className="btn btn-light">
                                                 Ver catálogo
                                             </button>
