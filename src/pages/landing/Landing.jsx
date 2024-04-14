@@ -1,27 +1,42 @@
 import React from 'react';
+import './Landing.css';
 
 
 function Landing() {
     return (
-    
-        <div className="App">
-        <header className="App-header">
-          <h1>Bienvenido a nuestra página de intercambio de libros</h1>
-          <p>Intercambia libros con personas de todo el mundo</p>
-        </header>
-        <div className="Hero-banner">
-          <img src="libros-hero.jpg" alt="Hero Banner" />
+
+        
+        <div className="HeroSection light hero">
+        <img src="https://img.freepik.com/premium-vector/book-exchange-landing-page-template-bookcrossing-vector-illustration-banner-education-knowledge-concept-diverse-hands-holding-books-swap-literature-event-library-day-culture-festival_534430-1064.jpg" />
+          <div className="heroInner">
+            <span>
+              <h1>Bienvenidos a NovelTrade</h1>
+              <Link to={`/CardPlanets/${item.uid}`}>
+                                            <button className="btn btn-light">
+                                                Ver catálogo
+                                            </button>
+                                        </Link>
+            </span>
+            <div className="column-container">
+                <div className="column">
+                    <h2>Título 1</h2>
+                    <i className="fas fa-star"></i>
+                    <p>Texto breve para la primera columna.</p>
+                </div>
+                <div className="column">
+                    <h2>Título 2</h2>
+                    <i className="fas fa-heart"></i>
+                    <p>Texto breve para la segunda columna.</p>
+                </div>
+                <div className="column">
+                    <h2>Título 3</h2>
+                    <i className="fas fa-check"></i>
+                    <p>Texto breve para la tercera columna.</p>
+                </div>
+                </div>
+          </div>
         </div>
-        <section className="Features">
-          <h2>Características</h2>
-          <p>Aquí puedes enumerar algunas características clave de tu plataforma de intercambio de libros.</p>
-        </section>
-        <footer className="Footer">
-          <p>&copy; 2024 Página de intercambio de libros</p>
-        </footer>
-      </div>
-
-
+      
 
     );
   }

@@ -6,6 +6,7 @@ import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
 import Landing from './pages/landing/Landing';
+import Catalog from './pages/catalog/Catalog';
 
 
 
@@ -16,6 +17,7 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing/>} />
+        <Route path="/catalog" element={<Catalog/>} />
       
       </Routes>
     </Router>
