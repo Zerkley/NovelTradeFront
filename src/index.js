@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
+import Landing from './pages/landing/Landing';
 
 
 
@@ -14,7 +15,8 @@ root.render(
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<App/>} />
+        <Route path="/" element={<Landing/>} />
+      
       </Routes>
     </Router>
   </React.StrictMode>
