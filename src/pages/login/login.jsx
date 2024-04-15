@@ -69,16 +69,16 @@ const Login = () => {
                             <a href="#" onClick={ocultar_login_sign_up}><i className="material-icons">&#xE5C4;</i></a>
                             <h2>INICIAR SESION</h2>
                             <input type="text" placeholder="Email" />
-                            <input type="password" placeholder="Password" />
+                            <input type="password" placeholder="Contraseña" />
                             <button className="btn_login" onClick={cambiar_login}>Iniciar sesion</button>
                         </div>
                         <div className="cont_form_sign_up">
                             <a href="#" onClick={ocultar_login_sign_up}><i className="material-icons">&#xE5C4;</i></a>
                             <h2>REGISTRARSE</h2>
                             <input type="text" placeholder="Email" />
-                            <input type="text" placeholder="User" />
-                            <input type="password" placeholder="Password" />
-                            <input type="password" placeholder="Confirm Password" />
+                            <input type="text" placeholder="Usuario" />
+                            <input type="password" placeholder="Contraseña" />
+                            <input type="password" placeholder="Confirmar contraseña" />
                             <button className="btn_sign_up" onClick={cambiar_sign_up}>Registrarse</button>
                         </div>
                     </div>
