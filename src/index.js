@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
-import Landing from './pages/landing/Landing';
+import Login from './pages/login/login';import Landing from './pages/landing/Landing';
 import Catalog from './pages/catalog/Catalog';
 
 
@@ -19,6 +19,7 @@ root.render(
         <Route path="/" element={<Landing/>} />
         <Route path="/catalog" element={<Catalog/>} />
       
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </Router>
   </React.StrictMode>

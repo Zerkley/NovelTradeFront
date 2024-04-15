@@ -1,7 +1,9 @@
-import logo from '../../logo.svg';
-import './App.css';
-import UseGlobalStore from '../../store/store';
-import { Link } from 'react-router-dom';
+import logo from "../../logo.svg";
+import "./App.css";
+import UseGlobalStore from "../../store/store";
+import { Link } from "react-router-dom";
+
+
 import Landing from '../landing/Landing';
 
 function App() {
