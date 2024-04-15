@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
-
+import Login from './pages/login/login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +15,7 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<App/>} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </Router>
   </React.StrictMode>
