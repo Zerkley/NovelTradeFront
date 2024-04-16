@@ -1,17 +1,14 @@
-.card {
+.profile{
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(199, 220, 167);
     margin: 10px;
-}
-
-.row {
     display: flex;
     flex-wrap: wrap;
-    margin: -15px; /* Para compensar el padding del padre */
 }
 
 .col-4 {
+    margin: 10px;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
     padding: 0 15px;
@@ -23,20 +20,11 @@
     padding: 0 15px;
 }
 
-.col-2 {
-    flex: 0 0 16.666667%;
-    max-width: 16.666667%;
-    padding: 0 15px;
-}
-
-.img-fluid {
+.image-profile {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
-}
-
-.card-body {
-    padding: 20px;
+    box-shadow: 0 0 5px rgba(199, 220, 167);
 }
 
 .card-title {
@@ -44,12 +32,13 @@
     margin-bottom: 10px;
 }
 
-.card-text {
+.card-info {
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.btn {
+.btn-edit {
+    margin: 20px;
     display: inline-block;
     font-weight: 400;
     text-align: center;
