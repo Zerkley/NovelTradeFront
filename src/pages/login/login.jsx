@@ -70,7 +70,7 @@ const Login = () => {
                             <h2>INICIAR SESION</h2>
                             <input type="text" placeholder="Email" />
                             <input type="password" placeholder="Contraseña" />
-                            <button className="btn_login" onClick={cambiar_login}>Iniciar sesion</button>
+                            <button /* style={{marginBotton:'100%'}} */ className="btn_login" onClick={cambiar_login}>Iniciar sesion</button>
                         </div>
                         <div className="cont_form_sign_up">
                             <a href="#" onClick={ocultar_login_sign_up}><i className="material-icons">&#xE5C4;</i></a>
