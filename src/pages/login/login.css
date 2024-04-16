@@ -215,6 +215,7 @@
 	border-radius:3px ;
   margin-top: 60px;
   padding: 15px 0px;
+  
   }
   
   .btn_sign_up { 
@@ -285,9 +286,10 @@
   }
   .cont_form_login {
 	position: absolute;
+	width: 320px;
+  float: left;
 	opacity: 0;
   display: none;
-	width: 320px;
 	-webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
