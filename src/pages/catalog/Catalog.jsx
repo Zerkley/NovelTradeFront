@@ -29,6 +29,7 @@ export default function Catalog() {
                     />
                     <div className="card-body">
                         <h5 className="mb-2 text-lg font-bold">{item.title}</h5>
+                        <h6 className="mb-2 text-lg font-bold">{item.state}</h6>
             
                     </div>
                 </div>

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{--font1: 'Heebo', sans-serif;--font2: 'Fira Sans Extra Condensed', sans-serif;--font3: 'Roboto', sans-serif}
+
+body{font-family: var(--font2);
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)
+}
+    
+h2{font-weight: 900}
+
+.d-flex-book{display:flex!important;
+        grid-gap: 20rem;
+        margin-left:30px;
+        margin-right:30px;}
+
+.d-inline-flex{display:inline-flex!important}
+
+.container-book {
+    padding-right:var(--bs-gutter-x,.75rem);
+    padding-left:var(--bs-gutter-x,.75rem);
+    margin-right:auto;
+    margin-left:auto;
+    margin-bottom: 200px;
+    margin-top: 60px;
+}
+
+
+
+.justify-content-between {
+        justify-content: space-between !important;
+    }
+    
+.book{background: #fff;
+    border: 0;
+    border-radius: 1rem;
+    text-decoration: none;
+    margin:0 auto;
+    width: 681px;
+    position: relative;
+}
+
+.book-img, 
+
+.book h5{overflow: hidden;
+    font-weight: 900;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+.book-img-top{width: 100%;
+             object-fit: cover;
+             padding: 16px}
+
+             
+.card h2{font-size: 1rem}
+
+
+.item-body{
+            
+            font-weight: 300;
+            font-size: 0.95rem;
+            height: 100%;
+            margin-left:30px;
+            margin-right:30px;
+        }
+            
+.book-title{margin-bottom:.5rem}
+  
+.small {
+    font-size: 80%;
+  }
+  
+.text-muted {
+    font-family: var(--font2);
+    color: #6c757d !important;
+  }
+
+.text-location {
+    font-family: var(--font3);
+    color: #2b2b2b !important;
+    font-size: 80%;
+  }
+
+.right {
+    text-align: left!important;
+    margin-left: 20px;
+  }
+
+.my-0 {
+    border-bottom: 1px solid #eceff1;
+    margin: 15px;
+    
+  }

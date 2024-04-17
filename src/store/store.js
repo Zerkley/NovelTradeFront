@@ -59,9 +59,32 @@ const useGlobalStore = create((set) => ({
                 "owner": "661a9a8cea642e54e378c519",
                 "__v": 0
             }
-        ]
+        ],
+
+        singleBookItem:
+            {
+                "_id": "661bbcb2ab493d375ee92a97",
+                "title": "harry potter",
+                "type": "string",
+                "state": "string",
+                "publishedYear": 0,
+                "genre": "string",
+                "author": "string",
+                "size": "string",
+                "picture": "string",
+                "owner": "661a9a8cea642e54e378c519",
+                "__v": 0
+            },
+
+    
     },
     functions: {
+
+
+       
+
+            }
+        }))  
 
         /*
         getProfileInfo: (id) => {
@@ -72,9 +95,9 @@ const useGlobalStore = create((set) => ({
         }
         */
 
-    }
+   
   
-}))
+
 
 
 
