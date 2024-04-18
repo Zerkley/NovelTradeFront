@@ -88,7 +88,7 @@ const UseGlobalStore = create((set) => ({
         .catch((error) => console.log("error", error));
     },
 
-    Login: (email, password) => {
+    getLogin: (email, password) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
       
@@ -117,7 +117,7 @@ const UseGlobalStore = create((set) => ({
           })
           .then((result) => {
             set({ token: result.token });
-            console.log(result); 
+            console.log(token); 
           })
           .catch((error) => {
             console.log("error", error);

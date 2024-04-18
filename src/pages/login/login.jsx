@@ -8,7 +8,7 @@ const Login = () => {
     (state) => state.functions.getCrearUsuario
   );
 
-  const traerUsuario = UseGlobalStore(
+  const login = UseGlobalStore(
     (state) => state.functions.getLogin
   );
 
@@ -19,7 +19,7 @@ const Login = () => {
   const [loginPassword, setLoginPassword] = useState('');
 
   const handleLogin = () => {
-    traerUsuario(email, password);
+    login(loginEmail, loginPassword);
   };
 
   const [usuarioCreado, setUsuarioCreado] = useState("");
