@@ -1,3 +1,8 @@
+/* .fade-out{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+} */
+
 .loginPage {
   display: flex;
   justify-content: center;
@@ -158,6 +163,7 @@
   } 
   
   .col_md_login {
+  
 	position: relative;
 	float: left;
 	width: 50%;
@@ -304,6 +310,7 @@
   }
   
   .cont_form_sign_up {
+  margin-top: 60px;
 	position: absolute;
 	width: 320px;
   float: left;
