@@ -1,14 +1,14 @@
 import React from "react"
-import useGlobalStore from "../../store/store.js";
+import UseGlobalStore from "../../store/store.js";
 import './profilePage.css';
 import BookCard from "../bookCard/bookCard.jsx";
 
 
 const ProfilePage = () => {
-   /* const variables = UseGlobalStore((state) => state.variables)
+    const variables = UseGlobalStore((state) => state.variables)
     const funciones = UseGlobalStore((state) => state.functions)
-
-    */
+    const miMadre = funciones.getProfileInfo();
+    
   
     return (
 <>
@@ -17,7 +17,7 @@ const ProfilePage = () => {
             <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
         </div>
         <div className="col-6">  
-           <h5 className="card-title">Nombre y Apellidos</h5>
+           <h5 className="card-title">{miMadre}</h5>
            <p className="card-info">✉ email@gmail.com</p>
            <p className="card-info">✆ 666-666-666</p>
            <p className="card-info">📫 Dirección</p>

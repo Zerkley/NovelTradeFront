@@ -67,20 +67,39 @@ const useGlobalStore = create((set) => ({
         getProfileInfo: (id) => {
             fetch(`https://noveltradeback.onrender.com/users/user/{userId}`)
                 .then(response => response.json())
-                .then(data => setVariables({ person: data.}))
+                .then(data => set({ person: data.}))
                 .catch(error => console.log('Error', error));
         }
-        */
+        
+*/
 
-    }
-  
-}))
+getProfileInfo: (id) => {
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2MjE2MjliOGZiNGRmZmExYzc3MzBmZCIsImVtYWlsIjoia3NqZGhmanNoZGZqayIsInBhc3N3b3JkIjoiYXNkZkFGQVNERkdBU1FGRyIsIl9fdiI6MH0sImlhdCI6MTcxMzQ2NDAwMiwiZXhwIjoxNzEzNTUwNDAyfQ.cKhgIGCWUZcGDX7UqDRfdGlKf3uYeoW2YfpT3zMLSck");
+    myHeaders.append("Content-Type", "application/json");
+    
+    const raw = JSON.stringify({
+        // email: email, // Assuming this comes from somewhere
+        // id: id, // Assuming this is provided as a parameter
+    });
 
+    const requestInfo = {
+        method: 'PATCH',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
 
-
-
-
-
+    fetch(`https://noveltradeback.onrender.com/users/user/${id}`, requestInfo)
+    .then(response => response.json())
+    .then(result => {
+        console.log('Response from server:', result);
+        set({ person: result });
+    })
+    .catch(error => console.log('error', error));
+}
+}
+}));
 
 
 export default useGlobalStore;
