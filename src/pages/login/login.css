@@ -363,3 +363,7 @@
 	  margin: 10px;
   margin-left: 30px;
   }
+
+  .animate__animated.animate__fadeOut {
+    --animate-duration: 2s;
+  }
