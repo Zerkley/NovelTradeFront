@@ -63,7 +63,7 @@ const UseGlobalStore = create((set) => ({
     ],
   },
   functions: {
-    getCrearUsuario: (email, password) => {
+    getCrearUsuario: async (email, password) => {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
@@ -79,7 +79,7 @@ const UseGlobalStore = create((set) => ({
         redirect: "follow",
       };
 
-      fetch(
+      await fetch(
         "https://noveltradeback.onrender.com/users/signup",
         requestCrearUsuario
       )
@@ -88,7 +88,7 @@ const UseGlobalStore = create((set) => ({
         .catch((error) => console.log("error", error));
     },
 
-    getLogin: (email, password) => {
+    getLogin: async (email, password) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
       
@@ -105,7 +105,7 @@ const UseGlobalStore = create((set) => ({
           redirect: "follow",
         };
       
-        fetch(
+        await fetch(
           "https://noveltradeback.onrender.com/users/login/",
           requestLogin
         )
@@ -117,7 +117,6 @@ const UseGlobalStore = create((set) => ({
           })
           .then((result) => {
             set({ token: result.token });
-            console.log(token); 
           })
           .catch((error) => {
             console.log("error", error);

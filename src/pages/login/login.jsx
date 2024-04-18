@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UseGlobalStore from "../../store/store";
-import { Link } from "react-router-dom";
+import 'animate.css';
+
 import "./login.css";
 
 const Login = () => {
@@ -9,7 +10,7 @@ const Login = () => {
   );
 
   const login = UseGlobalStore(
-    (state) => state.functions.getLogin
+    (state) => state.functions.Login
   );
 
   const [email, setEmail] = useState("");
@@ -23,13 +24,17 @@ const Login = () => {
   };
 
   const [usuarioCreado, setUsuarioCreado] = useState("");
+  const [estilosMensaje, setEstilosMensaje] = useState("");
 
   const handleCrearUsuario = () => {
     crearUsuario(email, password);
 
     setUsuarioCreado("¡Usuario creado! ¡Hora de iniciar sesión y descubrir!");
+    setEstilosMensaje("animate__animated animate__fadeOut");
     setTimeout(() => {
-      setUsuarioCreado(false);
+      setUsuarioCreado("");
+      setEstilosMensaje("");
+      cambiar_login();
     }, 2000);
   };
 
@@ -175,7 +180,7 @@ const Login = () => {
                   >
                     Registrarse
                   </button>
-                  <p className="fade-out">{usuarioCreado}</p>
+                  <p className={estilosMensaje}>{usuarioCreado}</p>
                 </div>
               </div>
             </div>
