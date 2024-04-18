@@ -65,9 +65,9 @@ const useGlobalStore = create((set) => ({
 
         /*
         getProfileInfo: (id) => {
-            fetch(`https://noveltradeback.onrender.com/users/user/${userId}`)
+            fetch(`https://noveltradeback.onrender.com/users/user/{userId}`)
                 .then(response => response.json())
-                .then(data => setStore({ person: }))
+                .then(data => setVariables({ person: data.}))
                 .catch(error => console.log('Error', error));
         }
         */

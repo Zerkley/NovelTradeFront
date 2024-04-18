@@ -18,7 +18,6 @@
 }
 
 .col-6 {
-    display: inline-block;
     margin:auto;
     flex: 0 0 50%;
     max-width: 50%;
@@ -26,9 +25,9 @@
 }
 
 .image-profile {
-    
+    margin:auto;
     max-width: 75%;
-    height: 100%;
+    height: 75%;
     border-radius: 50%;
     box-shadow: 0 0 5px #c7dca7;
 }
@@ -72,25 +71,4 @@
     color: black;
     background-color: #c7dca7;
     border-color: #ace459;
-}
-
-.add-book{
-    
-}
-.books-in-profile {
-    height: 500px;
-    border: 1px solid #C7DCA7;
-    border-radius: 8px;
-    box-shadow: 0 0 5px #C7DCA7;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 70px;
-    margin-right: 70px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.empty{
-    align-content: center;
-    color:#888686
 }

@@ -1,17 +1,17 @@
 import React from "react"
 import useGlobalStore from "../../store/store.js";
-import './profilePage.css';
-import BookCard from "../bookCard/bookCard.jsx";
+import './bookCard.css';
 
 
-const ProfilePage = () => {
+
+const BookCard = () => {
    /* const variables = UseGlobalStore((state) => state.variables)
     const funciones = UseGlobalStore((state) => state.functions)
 
     */
   
     return (
-<>
+
     <div className="profile">
         <div className="col-4">
             <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
@@ -21,16 +21,11 @@ const ProfilePage = () => {
            <p className="card-info">✉ email@gmail.com</p>
            <p className="card-info">✆ 666-666-666</p>
            <p className="card-info">📫 Dirección</p>
-          
+          <button className="btn-edit btn-success" >Editar</button>
         </div>  
-        <button className="btn-edit btn-success" >Editar</button>
     </div>
-    <button className="btn-edit btn-success add-book" >+ Añade un libro</button>
+
     
-    <div className="books-in-profile">
-        <p className="empty">Aún no has añadido ningún libro</p>
-    </div>
-    </>
     )
 }
-    export default ProfilePage;
+    export default BookCard;
