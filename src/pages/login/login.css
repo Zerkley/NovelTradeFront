@@ -364,6 +364,11 @@
   margin-left: 30px;
   }
 
-  .animate__animated.animate__fadeOut {
-    --animate-duration: 2s;
-  }
+  .animate__fadeOut {
+    --animate-duration: 5s;
+   
+}
+
+
+
+

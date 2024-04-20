@@ -90,7 +90,8 @@ const UseGlobalStore = create((set) => ({
 
     getLogin: async (email, password) => {
         const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Content-Type", 
+        "application/json");
       
         const raw = JSON.stringify({
           email: email,
@@ -123,6 +124,10 @@ const UseGlobalStore = create((set) => ({
             alert("Hubo un error al procesar la solicitud");
           });
       },
+      
+      
+      
+
   },
 }));
 
