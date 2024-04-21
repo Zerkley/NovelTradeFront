@@ -18,7 +18,7 @@ const BookCard = () => {
         </div>
         <div className="info-book">  
            <h5 className="book-title">Titulo del libro</h5>
-           <p className="card-info">Autor</p>
+           <p className="book-info">Autor</p>
         </div>
         <div className="buttons">
             <button className="btn-edit" >Editar</button>

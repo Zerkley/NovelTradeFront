@@ -30,10 +30,12 @@
 .book-title {
     font-size: 18px; 
     margin-bottom: 5px;
+    text-align: left;
 }
 
-.card-info {
+.book-info {
     font-size: 16px; 
+    text-align: left;
 }
 
 .buttons {
