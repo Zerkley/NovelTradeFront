@@ -80,3 +80,18 @@ export default function Book() {
    
 }
 
+/// USUARIO PRUEBA API
+
+/* {
+  "name": "Test",
+  "email": "testingmelody@test.com",
+  "password": "1234",
+  "city": "Valencia",
+  "phoneNumber": "0000",
+  "_id": "66210fe5b11a848e5598c433",
+  "__v": 0
+
+  id de libro: 6621116eb11a848e5598c437
+
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2MjEwZmU1YjExYTg0OGU1NTk4YzQzMyIsIm5hbWUiOiJUZXN0IiwiZW1haWwiOiJ0ZXN0aW5nbWVsb2R5QHRlc3QuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwiY2l0eSI6IlZhbGVuY2lhIiwicGhvbmVOdW1iZXIiOiIwMDAwIiwiX192IjowfSwiaWF0IjoxNzEzNDQyOTE3LCJleHAiOjE3MTM1MjkzMTd9.W-en1NlYx8Zkn93iO5frWDXixzPrYFgCjsG92tMdwBc"
+} */

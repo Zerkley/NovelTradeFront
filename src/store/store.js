@@ -5,61 +5,7 @@ const useGlobalStore = create((set) => ({
         test: 'Hello World',
         person: {},
 
-        allNonBooks: [
-            {
-                "_id": "661bbcb2ab493d375ee92a97",
-                "title": "harry potter",
-                "type": "string",
-                "state": "string",
-                "publishedYear": 0,
-                "genre": "string",
-                "author": "string",
-                "size": "string",
-                "picture": "string",
-                "owner": "661a9a8cea642e54e378c519",
-                "__v": 0
-            },
-            {
-                "_id": "661bf35b7e3850be609a9035",
-                "title": "ESDLA",
-                "type": "string",
-                "state": "string",
-                "publishedYear": 0,
-                "genre": "string",
-                "author": "string",
-                "size": "string",
-                "picture": "string",
-                "owner": "661a9a8cea642e54e378c519",
-                "__v": 0
-            },
-
-            {
-                "_id": "661bbcb2ab493d375ee92a97",
-                "title": "100 años de soledad",
-                "type": "string",
-                "state": "string",
-                "publishedYear": 0,
-                "genre": "string",
-                "author": "string",
-                "size": "string",
-                "picture": "string",
-                "owner": "661a9a8cea642e54e378c519",
-                "__v": 0
-            },
-            {
-                "_id": "661bbcb2ab493d375ee92a97",
-                "title": "La reina libertad",
-                "type": "string",
-                "state": "string",
-                "publishedYear": 0,
-                "genre": "string",
-                "author": "string",
-                "size": "string",
-                "picture": "string",
-                "owner": "661a9a8cea642e54e378c519",
-                "__v": 0
-            }
-        ],
+        allNonBooks: [],
 
         singleBookItem:
             {
@@ -76,11 +22,35 @@ const useGlobalStore = create((set) => ({
                 "__v": 0
             },
 
-    
-    },
-    functions: {
+            setAllNonBooks: (data) => set({ allNonBooks: data }),
 
 
+        getBooks: async (id, token) => {
+
+            fetch(`https://noveltradeback.onrender.com/books/all/${id}`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                console.log(data)
+                return data
+            })
+            .catch(error => console.log('Error: ', error));
+
+
+        },
+
+
+        /* getSingleContact: (id) => {
+            fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`) 
+                .then(response => response.json())
+                .then(data => setStore({contact:data}))
+                .catch(error => console.log('Error: ', error))
+            
+        },  */
        
 
             }
