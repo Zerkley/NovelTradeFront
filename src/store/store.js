@@ -1,9 +1,10 @@
 import { create } from 'zustand'
 
-const useGlobalStore = create((set) => ({
+const useGlobalStore = create((set, get) => ({
     variables:{
         test: 'Hello World',
         person: {},
+        token: '',
 
         allNonBooks: [],
 
@@ -22,21 +23,20 @@ const useGlobalStore = create((set) => ({
                 "__v": 0
             },
 
-            setAllNonBooks: (data) => set({ allNonBooks: data }),
 
 
-        getBooks: async (id, token) => {
+        getBooks: async (id) => {
 
             fetch(`https://noveltradeback.onrender.com/books/all/${id}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`,
+                    "Authorization": `Bearer ${get().variables.token}`,
                 }
             })
             .then(response => response.json())
             .then(data => {
                 
-                console.log(data)
-                return data
+                set(state => ({ variables: { ...state.variables, allNonBooks: data } }))
+                console.log(get().variables.allNonBooks)
             })
             .catch(error => console.log('Error: ', error));
 
