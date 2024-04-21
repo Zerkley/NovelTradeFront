@@ -1,5 +1,6 @@
 .profile{
-    border: 1px solid #C7DCA7;
+    align-items: center;
+    border: 2px solid #C7DCA7;
     border-radius: 8px;
     box-shadow: 0 0 5px #C7DCA7;
     margin-top: 30px;
@@ -18,7 +19,6 @@
 }
 
 .col-6 {
-    display: inline-block;
     margin:auto;
     flex: 0 0 50%;
     max-width: 50%;
@@ -30,6 +30,7 @@
     max-width: 75%;
     height: 100%;
     border-radius: 50%;
+    border-color: 5px #C7DCA7;
     box-shadow: 0 0 5px #c7dca7;
 }
 
@@ -44,8 +45,6 @@
 }
 
 .btn-edit {
-    margin: auto;
-    
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -63,20 +62,6 @@
     border-color: #ace459;
 }
 
-.btn:hover {
-    background-color: #c7dca7;
-    border-color: #ace459;
-}
-
-.btn-success {
-    color: black;
-    background-color: #c7dca7;
-    border-color: #ace459;
-}
-
-.add-book{
-    
-}
 .books-in-profile {
     height: 500px;
     border: 1px solid #C7DCA7;

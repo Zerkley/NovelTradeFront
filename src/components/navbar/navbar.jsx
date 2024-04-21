@@ -7,10 +7,12 @@ const Navbar = () => {
   return (
     <>
     <nav className="navbar">
-      <img src={logoNovel} className="logo" />
+      <img src={logoNovel} className="logo"/>
+      <a href="/login">Log out</a>
       <a href="/profile">Mi perfil</a>
       <a href="/Catalog">Market</a>
       <a href="/">Mis ofertas</a>
+      
     </nav>
     <div>
     <Outlet />

@@ -12,16 +12,17 @@ const BookCard = () => {
   
     return (
 
-    <div className="profile">
-        <div className="col-4">
-            <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
+    <div className="book-card">
+        <div className="photo-book">
+            <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-book" alt="..."/>
         </div>
-        <div className="col-6">  
-           <h5 className="card-title">Nombre y Apellidos</h5>
-           <p className="card-info">✉ email@gmail.com</p>
-           <p className="card-info">✆ 666-666-666</p>
-           <p className="card-info">📫 Dirección</p>
-          <button className="btn-edit btn-success" >Editar</button>
+        <div className="info-book">  
+           <h5 className="book-title">Titulo del libro</h5>
+           <p className="card-info">Autor</p>
+        </div>
+        <div className="buttons">
+            <button className="btn-edit" >Editar</button>
+            <button className="btn-edit" >Intercambiar</button>
         </div>  
     </div>
 

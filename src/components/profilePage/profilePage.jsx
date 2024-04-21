@@ -17,18 +17,19 @@ const ProfilePage = () => {
             <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
         </div>
         <div className="col-6">  
-           <h5 className="card-title">{miMadre}</h5>
+           <h5 className="card-title">{miMadre}Nombre y apellidos</h5>
            <p className="card-info">✉ email@gmail.com</p>
            <p className="card-info">✆ 666-666-666</p>
            <p className="card-info">📫 Dirección</p>
           
         </div>  
-        <button className="btn-edit btn-success" >Editar</button>
+        <button className="btn-edit" >Editar</button>
     </div>
-    <button className="btn-edit btn-success add-book" >+ Añade un libro</button>
+    <button className="btn-edit" >+ Añade un libro</button>
     
     <div className="books-in-profile">
         <p className="empty">Aún no has añadido ningún libro</p>
+        <BookCard />
     </div>
     </>
     )
