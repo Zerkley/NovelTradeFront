@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UseGlobalStore from "../../store/store";
 import "animate.css";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const login = UseGlobalStore((state) => state.functions.getLogin);
+  const token = UseGlobalStore((state) => state.variables.token);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -78,6 +79,14 @@ const Login = () => {
     }, 500);
   };
 
+  useEffect(() => {
+    if (token !== "") {
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 501);
+    }
+  },[token]);
+
   return (
     <div className="loginPage">
       <div className="cotn_principal">
@@ -142,7 +151,7 @@ const Login = () => {
                 <button
                   className="btn_login"
                   onClick={() => {
-                    navigate("/catalog");
+                    
                     handleLogin();
                     cambiar_login();
                   }}
