@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UseGlobalStore from "../../store/store";
 import "animate.css";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
+ 
+  const token = UseGlobalStore((state) => state.variables.token);
   const crearUsuario = UseGlobalStore(
     (state) => state.functions.getCrearUsuario
   );
@@ -77,7 +79,15 @@ const Login = () => {
       document.querySelector(".cont_form_login").style.display = "none";
     }, 500);
   };
-
+  useEffect(() => {
+    
+    if (token !== "") {
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 501);
+    }
+  },[token]);
+ 
   return (
     <div className="loginPage">
       <div className="cotn_principal">
@@ -142,14 +152,13 @@ const Login = () => {
                 <button
                   className="btn_login"
                   onClick={() => {
-                    navigate("/catalog");
+                   
                     handleLogin();
                     cambiar_login();
                   }}
                 >
                   Iniciar sesion
                 </button>
-                
               </div>
               <div className="cont_form_sign_up">
                 <a href="#" onClick={ocultar_login_sign_up}>
@@ -173,8 +182,10 @@ const Login = () => {
                 <button
                   className="btn_sign_up"
                   onClick={() => {
-                    if (!email || email.indexOf('@') === -1) {
-                      alert("Por favor, proporcione un correo electrónico válido.");
+                    if (!email || email.indexOf("@") === -1) {
+                      alert(
+                        "Por favor, proporcione un correo electrónico válido."
+                      );
                       return;
                     }
                     handleCrearUsuario();
