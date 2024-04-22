@@ -363,12 +363,26 @@
 	  margin: 10px;
   margin-left: 30px;
   }
-
   .animate__fadeOut {
     --animate-duration: 5s;
-   
+   font-family: 'Lato', sans-serif;
+    height: 90px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Cheri_white';
+    
+    
 }
 
 
+@font-face {
+  font-family: 'Cheri_black';
+  src: url(./CHERI___.TTF) format('truetype');
+}
 
+@font-face {
+  font-family: 'Cheri_white';
+  src: url(./CHERL___.TTF) format('truetype');
+}
 

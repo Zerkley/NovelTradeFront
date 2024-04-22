@@ -66,6 +66,7 @@ const UseGlobalStore = create((set) => ({
     getCrearUsuario: async (email, password) => {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
+      
 
       const raw = JSON.stringify({
         email: email,
@@ -83,6 +84,7 @@ const UseGlobalStore = create((set) => ({
         "https://noveltradeback.onrender.com/users/signup",
         requestCrearUsuario
       )
+      
         .then((response) => response.json())
         .then((result) => set({ usuario: result }))
         .catch((error) => console.log("error", error));

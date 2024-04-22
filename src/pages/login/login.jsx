@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import UseGlobalStore from "../../store/store";
 import "animate.css";
-
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
   const crearUsuario = UseGlobalStore(
     (state) => state.functions.getCrearUsuario
   );
+  const navigate = useNavigate();
 
   const login = UseGlobalStore((state) => state.functions.getLogin);
 
@@ -28,7 +29,7 @@ const Login = () => {
     crearUsuario(email, password);
 
     setUsuarioCreado("¡Usuario creado! ¡Hora de iniciar sesión y descubrir!");
-    setEstilosMensaje("animate__animated animate__fadeOut");
+    setEstilosMensaje("animate__animated animate__fadeOut ");
     setTimeout(() => {
       setUsuarioCreado("");
       setEstilosMensaje("");
@@ -137,17 +138,18 @@ const Login = () => {
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}
                 />
-                {/*  <Link to="/catalog"> */}
+
                 <button
                   className="btn_login"
                   onClick={() => {
+                    navigate("/catalog");
                     handleLogin();
                     cambiar_login();
                   }}
                 >
                   Iniciar sesion
                 </button>
-                {/*  </Link> */}
+                
               </div>
               <div className="cont_form_sign_up">
                 <a href="#" onClick={ocultar_login_sign_up}>
@@ -171,6 +173,10 @@ const Login = () => {
                 <button
                   className="btn_sign_up"
                   onClick={() => {
+                    if (!email || email.indexOf('@') === -1) {
+                      alert("Por favor, proporcione un correo electrónico válido.");
+                      return;
+                    }
                     handleCrearUsuario();
                     cambiar_sign_up();
                   }}
