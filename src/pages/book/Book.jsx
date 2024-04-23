@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './book.css';
 import UseGlobalStore from '../../store/store';
 import { FaRegHeart } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import Modal from './assets/Modal';
+import Advice from './assets/Advice';
+import AddBook from '../../components/addBook/AddBook';
 
-export default function Book() {
+export default function Book (props) {
 
-    const variables = UseGlobalStore((state) => state.variables)
+  //codigo para abrir el modal de añadir libro, borrar cuando termine la prueba
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+    const variables = UseGlobalStore((state) => state.variables);
+
+    const singleBook = variables.singleBookItem;
+
+    console.log(singleBook);
+
+    /* useEffect( () => {
+      variables.getBookInfo();
+    },[]); */
 
     /* const singleBook = variables.singleBookItem; */
 
@@ -21,7 +41,7 @@ export default function Book() {
         
                 <p className="text-dark" style={{ paddingTop: "10px" }}>
                   
-                   Jesus Gimenez
+                   {singleBook.owner}
                   
                 </p>
                 <p className="text-dark" style={{ paddingTop: "10px" }}><FaRegHeart /></p>
@@ -39,30 +59,25 @@ export default function Book() {
               <div className="justify-content-between">
                 <div>
                   <p className="right">
-                    Harry Potter y el prisionero de Azkaban
+                    {singleBook.title}
                   </p>
-                  <p className="small text-muted right">Estado: muy bueno</p>
-                  <p className="small text-muted right">Edición de bolsillo</p>
-                  <p className="small text-muted right">850 páginas</p>
-                
+                  <p className="small text-muted right">Estado: {singleBook.state}</p>
+                  <p className="small text-muted right">{singleBook.type}</p>
+                  <p className="small text-muted right">{singleBook.size}</p>
+                  <hr className="my-0" />
                   <div className="d-inline-flex right">
                   <p className="text-location">
                   
                   <MdLocationOn />
-                  
                   </p>
                   <p className="text-location">Valencia</p>
-                  </div>
-                  <hr className="my-0" />
-                  <p className="item-body">
-                    Libro de harry potter en muy buenas condiciones, edición especial coleccionista y bla bla bla bla
-                  </p>
-                  <hr className="my-0" />
-                  
+                  </div> 
                 </div>
                 <div >
                 <button className="btn btn-primary">Intercambiar</button>
-                <Modal />
+                <button onClick={openModal}>Crear Nuevo Producto</button>
+                <AddBook isOpen={isModalOpen} onRequestClose={closeModal} />
+                <Advice />
                 <p><br/><br/></p>
                 </div>
               </div>
@@ -92,6 +107,7 @@ export default function Book() {
   "__v": 0
 
   id de libro: 6621116eb11a848e5598c437
+  
 
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2MjEwZmU1YjExYTg0OGU1NTk4YzQzMyIsIm5hbWUiOiJUZXN0IiwiZW1haWwiOiJ0ZXN0aW5nbWVsb2R5QHRlc3QuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwiY2l0eSI6IlZhbGVuY2lhIiwicGhvbmVOdW1iZXIiOiIwMDAwIiwiX192IjowfSwiaWF0IjoxNzEzNDQyOTE3LCJleHAiOjE3MTM1MjkzMTd9.W-en1NlYx8Zkn93iO5frWDXixzPrYFgCjsG92tMdwBc"
 } */

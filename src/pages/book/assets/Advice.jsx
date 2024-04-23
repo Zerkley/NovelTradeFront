@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import './modal.css';
+import './advice.css';
 
-export default function Modal() {
+export default function Advice() {
 
     const [advice, setAdvice] = useState("");
 

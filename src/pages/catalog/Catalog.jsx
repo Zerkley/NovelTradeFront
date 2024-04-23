@@ -4,7 +4,7 @@ import UseGlobalStore from '../../store/store';
 
 export default function Catalog() {
 
-    const variables = UseGlobalStore((state) => state.variables)
+    const variables = UseGlobalStore((state) => state.variables);
     const allBooks = variables.allNonBooks;
     useEffect(async () => {
         const libros = await variables.getBooks("661a6d29775671f29cdf84a1", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2MWE5YThjZWE2NDJlNTRlMzc4YzUxOSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiMTI0NDQ0NCIsIl9fdiI6MCwib2ZmZXJzIjoiNjYxYmMwZWZkOWIwZGM0NDczYmY1MGYwIn0sImlhdCI6MTcxMzcyNDAyMywiZXhwIjoxNzEzODEwNDIzfQ._qGgApMaRINgUZc0-3Mik-scc5HATeiJtg3XLbbyvBI")
@@ -12,6 +12,11 @@ export default function Catalog() {
     }, []) 
 
 
+
+  
+    useEffect( () => {
+      variables.getUserBooks();
+    },[]);
 
   return (
 
