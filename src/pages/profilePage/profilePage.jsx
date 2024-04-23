@@ -4,16 +4,19 @@ import './profilePage.css';
 import BookCard from "../../components/bookCard/bookCard.jsx";
 
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
 
     const variables = UseGlobalStore((state) => state.variables);
     const profileInfo = variables.person;
     const userBooks = variables.userBooks;
+    const editUser = variables.editUser();
   
     useEffect( () => {
       variables.getUserBooks();
+      variables.getProfileInfo();
     },[]);
   
+    
     return (
       <>
         <div className="profile">
@@ -21,22 +24,25 @@ const ProfilePage = () => {
               <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
             </div>
             <div className="col-6">  
-              <h5 className="card-title">Nombre {profileInfo.name}</h5>
+              <h5 className="card-title"> {profileInfo.name}</h5>
               <p className="card-info">✉ {profileInfo.email}</p>
               <p className="card-info">✆ {profileInfo.phoneNumber}</p>
               <p className="card-info">📫 {profileInfo.city}</p>
             </div>  
-            <button className="btn-edit" >Editar</button>
+            <button className="btn-edit" onClick={() => variables.editUser(props.id)}>Editar</button>
         </div>
         <button className="btn-edit" >+ Añade un libro</button>
       
         <div className="books-in-profile">
-          <p className="empty">Aún no has añadido ningún libro</p>
-          {userBooks?.map((book, index) => {
+        {userBooks === null || userBooks.lenght === 0 ? (  
+           <p className="empty">Aún no has añadido ningún libro</p>
+        ) : ( userBooks?.map((book, index) => {
             return (
               <BookCard
+                id={book.id}
                 key={index}
                 title={book.title}
+                type={book.type}
                 author={book.author}
                 genre={book.genre}
                 publishedYear={book.publishedYear}
@@ -45,7 +51,7 @@ const ProfilePage = () => {
                 size={book.size}
               />
             );
-          })}
+          }) )}
         </div>
       </>
     );

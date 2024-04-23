@@ -5,30 +5,32 @@ import './bookCard.css';
 
 
 const BookCard = (props) => {
-   /* const variables = UseGlobalStore((state) => state.variables)
-    const funciones = UseGlobalStore((state) => state.functions)
-
-    */
-  
+    const variables = useGlobalStore((state) => state.variables);
+    
     return (
 
     <div className="book-card">
         <div className="photo-book">
-            <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" /*{item.picture} */ className="image-book" alt="..."/>
+            <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-book" alt="..."/>
         </div>
         <div className="info-book">  
-           <h5 className="book-title">Titulo del libro: {props.title}</h5>
-           <p className="book-info">Autor: {props.author}</p>
-           <p className="book-info">genre: {props.genre}</p>
-           <p className="book-info">publishedYear: {props.publishedYear}</p>
-           <p className="book-info">type: {props.type}</p>
-           <p className="book-info">state: {props.state}</p>
-           <p className="book-info">size: {props.size}</p>
+           <div className="column">
+            <p className="book-info">Título del libro: {props.title}</p>
+            <p className="book-info">Autor: {props.author}</p>
+           </div>
+           <div className="column">
+            <p className="book-info">Género: {props.genre}</p>
+            <p className="book-info">Año de publicación: {props.publishedYear}</p>
+            <p className="book-info">Tipo: {props.type}</p>
+           </div>
+           <div className="column">
+            <p className="book-info">Estado: {props.state}</p>
+            <p className="book-info">Tamaño: {props.size}</p>
+           </div>
         </div>
         <div className="buttons">
-            <button className="btn-edit" >Editar</button>
-            <button className="btn-edit" >Intercambiar</button>
-            <button className="btn-edit" >Eliminar</button>
+            <button className="btn-edit" /*onClick={() => variables.editBook(props.id)}*/>Editar</button>
+            <button className="btn-edit" onClick={() => variables.deleteBook(props.id)}>Eliminar</button>
         </div>  
     </div>
 
