@@ -117,7 +117,7 @@ const UseGlobalStore = create((set, get) => ({
           return response.json();
         })
         .then((result) => {
-          set(state => ({ variables: { ...state.variables, token: result.token, userId: result.userId } }))∫
+          set(state => ({ variables: { ...state.variables, token: result.token, userId: result.userId } }));
           console.log(get().variables.token);
         })
         .catch((error) => {
