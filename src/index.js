@@ -8,7 +8,7 @@ import Navbar from './components/navbar/navbar';
 import ProfilePage from './components/profilePage/profilePage';
 import Login from './pages/login/login';import Landing from './pages/landing/Landing';
 import Catalog from './pages/catalog/Catalog';
-
+import Faq from './pages/faq/faq';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +19,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Landing/>} />
         <Route path="/catalog" element={<Catalog/>} />
-      
+        <Route path="/faq" element={<Faq />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
