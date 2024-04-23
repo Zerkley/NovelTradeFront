@@ -18,7 +18,7 @@ const ProfilePage = (props) => {
   
     
     return (
-      <>
+      <div className="">
         <div className="profile">
             <div className="col-4">
               <img src="https://www.chaomanagement.com/wp-content/uploads/2019/08/Pepe-Viyuela-053-e1607963190390ok-770x539.jpg" className="image-profile" alt="..."/>
@@ -39,7 +39,7 @@ const ProfilePage = (props) => {
         ) : ( userBooks?.map((book, index) => {
             return (
               <BookCard
-                id={book.id}
+                id={book._id}
                 key={index}
                 title={book.title}
                 type={book.type}
@@ -53,7 +53,8 @@ const ProfilePage = (props) => {
             );
           }) )}
         </div>
-      </>
+      </div>
+    
     );
   };
   

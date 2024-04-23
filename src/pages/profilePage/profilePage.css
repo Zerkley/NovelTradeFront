@@ -1,3 +1,5 @@
+
+
 .profile{
     align-items: center;
     border: 2px solid #C7DCA7;
@@ -65,7 +67,7 @@
 }
 
 .books-in-profile {
-    height: 500px;
+    height: 100%;
     border: 1px solid #C7DCA7;
     border-radius: 8px;
     box-shadow: 0 0 5px #C7DCA7;
