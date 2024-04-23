@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './book.css';
-import UseGlobalStore from '../../store/store';
+import useGlobalStore from '../../store/store';
 import { FaRegHeart } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import Advice from './assets/Advice';
@@ -19,17 +19,10 @@ export default function Book (props) {
       setIsModalOpen(false);
     };
 
-    const variables = UseGlobalStore((state) => state.variables);
+      const variables = useGlobalStore((state) => state.variables);
+
 
     const singleBook = variables.singleBookItem;
-
-    console.log(singleBook);
-
-    /* useEffect( () => {
-      variables.getBookInfo();
-    },[]); */
-
-    /* const singleBook = variables.singleBookItem; */
 
   return (
 
@@ -61,17 +54,15 @@ export default function Book (props) {
                   <p className="right">
                     {singleBook.title}
                   </p>
-                  <p className="small text-muted right">Estado: {singleBook.state}</p>
-                  <p className="small text-muted right">{singleBook.type}</p>
-                  <p className="small text-muted right">{singleBook.size}</p>
+                  <p className="small text-muted right">Autor: {singleBook.author}</p>
                   <hr className="my-0" />
-                  <div className="d-inline-flex right">
-                  <p className="text-location">
+                  <p className="small text-muted right">Estado: {singleBook.state}</p>
+                  <p className="small text-muted right">Tipo: {singleBook.type}</p>
+                  <p className="small text-muted right">Género: {singleBook.genre}</p>
+                  <p className="small text-muted right">Tamaño: {singleBook.size}</p>
+                  <p className="small text-muted right">Año de publicación: {singleBook.publishedYear}</p>
+                  <hr className="my-0" />
                   
-                  <MdLocationOn />
-                  </p>
-                  <p className="text-location">Valencia</p>
-                  </div> 
                 </div>
                 <div >
                 <button className="btn btn-primary">Intercambiar</button>
