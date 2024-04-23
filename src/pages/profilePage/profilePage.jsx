@@ -8,9 +8,10 @@ const ProfilePage = () => {
 
     const variables = UseGlobalStore((state) => state.variables);
     const profileInfo = variables.person;
+    const userBooks = variables.userBooks;
   
-    useEffect(async () => {
-      const people = variables.getProfileInfo("");
+    useEffect( () => {
+      variables.getUserBooks();
     },[]);
   
     return (
@@ -31,7 +32,20 @@ const ProfilePage = () => {
       
         <div className="books-in-profile">
           <p className="empty">Aún no has añadido ningún libro</p>
-          <BookCard />
+          {userBooks?.map((book, index) => {
+            return (
+              <BookCard
+                key={index}
+                title={book.title}
+                author={book.author}
+                genre={book.genre}
+                publishedYear={book.publishedYear}
+                picture={book.picture}
+                state={book.state}
+                size={book.size}
+              />
+            );
+          })}
         </div>
       </>
     );

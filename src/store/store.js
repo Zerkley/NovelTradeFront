@@ -4,7 +4,9 @@ const useGlobalStore = create((set,get) => ({
     variables:{
         test: 'Hello World',
         person: {},
-        token: '',
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2MWE5YThjZWE2NDJlNTRlMzc4YzUxOSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiMTI0NDQ0NCIsIl9fdiI6MCwib2ZmZXJzIjoiNjYxYmMwZWZkOWIwZGM0NDczYmY1MGYwIn0sImlhdCI6MTcxMzg3MjEyMiwiZXhwIjoxNzEzOTU4NTIyfQ.bgrifNYXvJdJRMjeNTLIPkAyWWvYRcOeObJv1j2oWAk',
+        userBooks: [],
+        userId: '661a9a8cea642e54e378c519',
 
         allNonBooks: [
             {
@@ -59,10 +61,10 @@ const useGlobalStore = create((set,get) => ({
                 "picture": "string",
                 "owner": "661a9a8cea642e54e378c519",
                 "__v": 0
-            },
-            {
-                getProfileInfo: async (id) => {
-                    fetch(`https://noveltradeback.onrender.com/users/user/{userEmail}`, {
+            }], 
+    
+            getProfileInfo: async (userEmail) => {
+                    fetch(`https://noveltradeback.onrender.com/users/user/${userEmail}`, {
                         headers: {
                             "Authorization": `Bearer ${get().variables.token}`,
                         }
@@ -74,10 +76,38 @@ const useGlobalStore = create((set,get) => ({
                     })
                     .catch(error => console.log('Error: ', error));
                 
-            }
-        }
+            },
 
-    ]
+            getUserBooks: async () => {
+                await fetch(`https://noveltradeback.onrender.com/books/${get().variables.userId}`,{
+                    headers:{
+                        'Authorization': `Bearer ${get().variables.token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => set(state => ({ variables: { ...state.variables, userBooks: data } })))
+                .catch(error => console.log('Error: ', error));
+            },
+
+            createUserBook: async (title, type, state, publishedYear, genre, author, size) => {
+                await fetch(`https://noveltradeback.onrender.com/books/${get().variables.userId}`,{
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${get().variables.token}`
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        type: type,
+                        state: state,
+                        publishedYear: publishedYear,
+                        genre: genre,
+                        author: author,
+                        size: size })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log('Error: ', error));
+            }
 }
 }));
 
