@@ -48,7 +48,7 @@ const FAQAccordion = () => {
 
           <div className="acc-container">
             {faqs.map((faq, index) => (
-              <React.Fragment key={index}>
+              <div key={index}>
                 <button
                   style={{ fontSize: "15px" }}
                   className={`acc-btn ${openIndex === index ? "is-open" : ""}`}
@@ -62,7 +62,7 @@ const FAQAccordion = () => {
                 >
                   <p style={{ fontSize: "15px" }}>{faq.answer}</p>
                 </div>
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </main>
