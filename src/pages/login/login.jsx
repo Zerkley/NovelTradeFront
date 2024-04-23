@@ -6,11 +6,11 @@ import "./login.css";
 
 const Login = () => {
   const crearUsuario = UseGlobalStore(
-    (state) => state.functions.getCrearUsuario
+    (state) => state.variables.getCrearUsuario
   );
   const navigate = useNavigate();
 
-  const login = UseGlobalStore((state) => state.functions.getLogin);
+  const login = UseGlobalStore((state) => state.variables.getLogin);
   const token = UseGlobalStore((state) => state.variables.token);
 
   const [email, setEmail] = useState("");
