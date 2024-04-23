@@ -8,7 +8,6 @@ import Navbar from './components/navbar/navbar';
 import ProfilePage from './components/profilePage/profilePage';
 import Login from './pages/login/login';import Landing from './pages/landing/Landing';
 import Catalog from './pages/catalog/Catalog';
-import Offers from './pages/offers/offers';
 
 
 
@@ -19,8 +18,7 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing/>} />
-        <Route path="/catalog" element={<Catalog/>} />
-        <Route path= "/offers" element={<Offers/>} />     
+        <Route path="/catalog" element={<Catalog/>} />     
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
