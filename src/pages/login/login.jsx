@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UseGlobalStore from "../../store/store";
 import "animate.css";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
+ 
+  
   const crearUsuario = UseGlobalStore(
     (state) => state.variables.getCrearUsuario
   );
@@ -86,7 +88,15 @@ const Login = () => {
       }, 501);
     }
   },[token]);
-
+  useEffect(() => {
+    
+    if (token !== "") {
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 501);
+    }
+  },[token]);
+ 
   return (
     <div className="loginPage">
       <div className="cotn_principal">
@@ -158,7 +168,6 @@ const Login = () => {
                 >
                   Iniciar sesion
                 </button>
-                
               </div>
               <div className="cont_form_sign_up">
                 <a href="#" onClick={ocultar_login_sign_up}>
@@ -182,8 +191,10 @@ const Login = () => {
                 <button
                   className="btn_sign_up"
                   onClick={() => {
-                    if (!email || email.indexOf('@') === -1) {
-                      alert("Por favor, proporcione un correo electrónico válido.");
+                    if (!email || email.indexOf("@") === -1) {
+                      alert(
+                        "Por favor, proporcione un correo electrónico válido."
+                      );
                       return;
                     }
                     handleCrearUsuario();
