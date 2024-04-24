@@ -65,7 +65,7 @@ const useGlobalStore = create((set,get) => ({
             }], 
     
             getProfileInfo: async () => {
-                    fetch(`https://noveltradeback.onrender.com/users/user/${get().variables.userEmail}`, {
+                    fetch(`https://noveltradeback.onrender.com/users/user/${get().variables.userId}`, {
                         headers: {
                             "Authorization": `Bearer ${get().variables.token}`,
                         }
