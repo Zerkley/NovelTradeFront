@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
-import ProfilePage from './components/profilePage/profilePage';
+import ProfilePage from './pages/profilePage/profilePage';
 import Login from './pages/login/login';
 import Landing from './pages/landing/Landing';
 import Catalog from './pages/catalog/Catalog';

@@ -4,7 +4,7 @@
   }
   
   .navbar a {
-    float: left;
+    float: right;
     display: block;
     color: black;
     text-align: center;
@@ -16,4 +16,10 @@
   .navbar a:hover {
     background-color: #C7DCA7;
     color: black;
+  }
+
+  img{
+  
+    height: 50px;
+    float: left;
   }

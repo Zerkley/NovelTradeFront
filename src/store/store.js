@@ -101,6 +101,38 @@ const UseGlobalStore = create((set, get) => ({
         },
 
 
+            editBook: async (bookId, title, type, state, publishedYear, genre, author, size) => {
+                await fetch(`https://noveltradeback.onrender.com/book/${bookId}`,{
+                    method: "PATCH",
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${get().variables.token}`
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        type: type,
+                        state: state,
+                        publishedYear: publishedYear,
+                        genre: genre,
+                        author: author,
+                        size: size })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log('Error: ', error));
+            },
+
+            deleteBook: async (bookId) => {
+                await fetch(`https://noveltradeback.onrender.com/book/${bookId}`,{
+                    method: "DELETE",
+                    headers:{
+                        'Authorization': `Bearer ${get().variables.token}`
+                    },
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log('Error: ', error));
+            },
 
         getUserBooks: async () => {
             await fetch(`https://noveltradeback.onrender.com/books/${get().variables.userId}`, {
@@ -112,6 +144,7 @@ const UseGlobalStore = create((set, get) => ({
                 .then(data => set(state => ({ variables: { ...state.variables, userBooks: data } })))
                 .catch(error => console.log('Error: ', error));
         },
+
 
         createUserBook: async (title, type, state, publishedYear, genre, author, size) => {
             await fetch(`https://noveltradeback.onrender.com/books/${get().variables.userId}`, {

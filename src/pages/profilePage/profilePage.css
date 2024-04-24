@@ -1,8 +1,14 @@
+
+
 .profile{
-    border: 1px solid #ccc;
+    align-items: center;
+    border: 2px solid #C7DCA7;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(199, 220, 167);
-    margin: 10px;
+    box-shadow: 0 0 5px #C7DCA7;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -10,36 +16,39 @@
 .col-4 {
     margin: 10px;
     flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    
     padding: 0 15px;
 }
 
 .col-6 {
+    margin:auto;
     flex: 0 0 50%;
     max-width: 50%;
     padding: 0 15px;
 }
 
 .image-profile {
-    max-width: 100%;
-    height: auto;
+    
+    max-width: 75%;
+    height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(199, 220, 167);
+    border-color: 5px #C7DCA7;
+    box-shadow: 0 0 5px #c7dca7;
 }
 
 .card-title {
     font-size: 24px;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .card-info {
     font-size: 18px;
     margin-bottom: 5px;
+    text-align: left;
 }
 
 .btn-edit {
-    margin: 20px;
-    display: inline-block;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -52,18 +61,25 @@
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     cursor: pointer;
-    background-color: #28a745;
-    color: #fff;
-    border-color: #28a745;
+    background-color: #c7dca7;
+    color: black;
+    border-color: #ace459;
 }
 
-.btn:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
+.books-in-profile {
+    height: 100%;
+    border: 1px solid #C7DCA7;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #C7DCA7;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
+.empty{
+    align-content: center;
+    color:#888686
 }
