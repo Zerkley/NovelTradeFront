@@ -6,8 +6,10 @@ import App from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/navbar/navbar';
 import ProfilePage from './pages/profilePage/profilePage';
-import Login from './pages/login/login';import Landing from './pages/landing/Landing';
+import Login from './pages/login/login';
+import Landing from './pages/landing/Landing';
 import Catalog from './pages/catalog/Catalog';
+import Book from './pages/book/Book';
 
 
 
@@ -19,7 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Landing/>} />
         <Route path="/catalog" element={<Catalog/>} />
-      
+        <Route path="/book" element={<Book/>} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>

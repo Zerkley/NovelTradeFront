@@ -1,3 +1,8 @@
+/* .fade-out{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+} */
+
 .loginPage {
   display: flex;
   justify-content: center;
@@ -11,6 +16,7 @@
 	padding: 0px;
 	text-align: center;
   font-family: 'Lato', sans-serif;
+  text-decoration: none;
   }
   
   .cotn_principal {
@@ -158,6 +164,7 @@
   } 
   
   .col_md_login {
+  
 	position: relative;
 	float: left;
 	width: 50%;
@@ -304,6 +311,7 @@
   }
   
   .cont_form_sign_up {
+  margin-top: 60px;
 	position: absolute;
 	width: 320px;
   float: left;
@@ -356,3 +364,26 @@
 	  margin: 10px;
   margin-left: 30px;
   }
+  .animate__fadeOut {
+    --animate-duration: 5s;
+   font-family: 'Lato', sans-serif;
+    height: 90px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Cheri_white';
+    
+    
+}
+
+
+@font-face {
+  font-family: 'Cheri_black';
+  src: url(./CHERI___.TTF) format('truetype');
+}
+
+@font-face {
+  font-family: 'Cheri_white';
+  src: url(./CHERL___.TTF) format('truetype');
+}
+
