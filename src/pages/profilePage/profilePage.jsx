@@ -9,9 +9,10 @@ const ProfilePage = (props) => {
     const variables = UseGlobalStore((state) => state.variables);
     const profileInfo = variables.person;
     const userBooks = variables.userBooks;
-    const editUser = variables.editUser();
+    // const editUser = variables.editUser();
   
     useEffect( () => {
+      console.log(variables.userId)
       variables.getUserBooks();
       variables.getProfileInfo();
     },[]);
@@ -34,7 +35,7 @@ const ProfilePage = (props) => {
         <button className="btn-edit" >+ Añade un libro</button>
       
         <div className="books-in-profile">
-        {userBooks === null || userBooks.lenght === 0 ? (  
+        {userBooks === null || userBooks?.length === 0 ? (  
            <p className="empty">Aún no has añadido ningún libro</p>
         ) : ( userBooks?.map((book, index) => {
             return (

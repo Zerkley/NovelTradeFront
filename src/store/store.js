@@ -5,8 +5,8 @@ const UseGlobalStore = create((set, get) => ({
         test: "Hello World",
         person: {},
         usuario: {},
-        token: "",
-        userId: "",
+        token: localStorage.getItem("token"),
+        userId: localStorage.getItem("userId"),
         singleBookItem: {},
 
         allNonBooks: [],
@@ -65,8 +65,9 @@ const UseGlobalStore = create((set, get) => ({
                     return response.json();
                 })
                 .then((result) => {
-                    set(state => ({ variables: { ...state.variables, token: result.token, userId: result.userId } }))
-                    console.log(get().variables.token);
+                    localStorage.setItem("token", result.token);
+                    localStorage.setItem("userId", result.userId);
+                    console.log(get().variables.userId);
                 })
                 .catch((error) => {
                     console.log("error", error);
@@ -101,38 +102,43 @@ const UseGlobalStore = create((set, get) => ({
         },
 
 
-            editBook: async (bookId, title, type, state, publishedYear, genre, author, size) => {
-                await fetch(`https://noveltradeback.onrender.com/book/${bookId}`,{
-                    method: "PATCH",
-                    headers:{
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${get().variables.token}`
-                    },
-                    body: JSON.stringify({
-                        title: title,
-                        type: type,
-                        state: state,
-                        publishedYear: publishedYear,
-                        genre: genre,
-                        author: author,
-                        size: size })
+        editBook: async (bookId, title, type, state, publishedYear, genre, author, size) => {
+            await fetch(`https://noveltradeback.onrender.com/book/${bookId}`, {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${get().variables.token}`
+                },
+                body: JSON.stringify({
+                    title: title,
+                    type: type,
+                    state: state,
+                    publishedYear: publishedYear,
+                    genre: genre,
+                    author: author,
+                    size: size
                 })
+            })
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log('Error: ', error));
-            },
+        },
 
-            deleteBook: async (bookId) => {
-                await fetch(`https://noveltradeback.onrender.com/book/${bookId}`,{
-                    method: "DELETE",
-                    headers:{
-                        'Authorization': `Bearer ${get().variables.token}`
-                    },
-                })
-                .then(response => response.json())
+        deleteBook: async (bookId) => {
+            await fetch(`https://noveltradeback.onrender.com/books/book/${bookId}`, {
+                method: "DELETE",
+                headers: {
+                    'Authorization': `Bearer ${get().variables.token}`
+                },
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        get().variables.getUserBooks();
+                    }
+                    return response.json()})
                 .then(data => console.log(data))
                 .catch(error => console.log('Error: ', error));
-            },
+        },
 
         getUserBooks: async () => {
             await fetch(`https://noveltradeback.onrender.com/books/${get().variables.userId}`, {
@@ -166,7 +172,41 @@ const UseGlobalStore = create((set, get) => ({
                 .then(response => response.json())
                 .then(data => console.log(data))
                 .catch(error => console.log('Error: ', error));
-        }
+        },
+        getProfileInfo: async () => {
+            fetch(`https://noveltradeback.onrender.com/users/user/${localStorage.getItem("userId")}`, {
+                headers: {
+                    "Authorization": `Bearer ${get().variables.token}`,
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    set(state => ({ variables: { ...state.variables, person: data } }))
+                    console.log(get().variables.person)
+                })
+                .catch(error => console.log('Error: ', error));
+
+        },
+
+        editUser: async (email, password, name, city, phoneNumber) => {
+            await fetch(`https://noveltradeback.onrender.com/users/user/${get().variables.userId}`, {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${get().variables.token}`
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    name: name,
+                    city: city,
+                    phoneNumber: phoneNumber
+                })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log('Error: ', error));
+        },
     },
 }));
 

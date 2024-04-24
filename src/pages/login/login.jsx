@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const login = UseGlobalStore((state) => state.variables.getLogin);
-  const token = UseGlobalStore((state) => state.variables.token);
+  const token = localStorage.getItem("token");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -80,7 +80,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (token !== "") {
+    if (token !== null) {
       setTimeout(() => {
         navigate("/catalog");
       }, 501);
