@@ -1,22 +1,17 @@
 import React, { useEffect } from 'react'
 import './catalog.css';
-import UseGlobalStore from '../../store/store';
+import useGlobalStore from '../../store/store';
+import { Link } from "react-router-dom";
 
 export default function Catalog() {
 
-    const variables = UseGlobalStore((state) => state.variables);
+    const variables = useGlobalStore((state) => state.variables);
     const allBooks = variables.allNonBooks;
     useEffect( () => {
-        const libros =  variables.getBooks("661a6d29775671f29cdf84a1")
-        console.log(libros)
+        const libros =  variables.getBooks()
+       /*  console.log(libros) */
     }, []) 
 
-
-
-  
-    useEffect( () => {
-      variables.getUserBooks();
-    },[]);
 
   return (
 
@@ -25,6 +20,7 @@ export default function Catalog() {
             <div className="d-flex"> 
             {allBooks?.map((item, index) => {
                 return (
+                    <Link to="/book">
                     <div
                     className="card"
                     /* style={{ minWidth: "225px", flex: "0 0 auto" }} */
@@ -39,12 +35,13 @@ export default function Catalog() {
                     />
                     <div className="card-body">
                         <h5 className="mb-2 text-lg font-bold">{item.title}</h5>
+                        <h6 className="mb-2 text-lg font-bold">{item.author}</h6>
                         <h6 className="mb-2 text-lg font-bold">{item.state}</h6>
             
                     </div>
-                </div>
+                </div></Link>
             )})}
-            <button onClick={() => console.log(allBooks)}>Botón</button>
+            {/* <button onClick={() => console.log(allBooks)}>Botón</button> */}
             </div>
 
     </div>

@@ -6,6 +6,7 @@ import { MdLocationOn } from "react-icons/md";
 import Advice from './assets/Advice';
 import AddBook from '../../components/addBook/AddBook';
 
+
 export default function Book (props) {
 
   //codigo para abrir el modal de añadir libro, borrar cuando termine la prueba
@@ -19,10 +20,24 @@ export default function Book (props) {
       setIsModalOpen(false);
     };
 
-      const variables = useGlobalStore((state) => state.variables);
+    // aqui termina el codigo del modal
+
+    const variables = useGlobalStore((state) => state.variables);
 
 
     const singleBook = variables.singleBookItem;
+
+  
+
+    // pruebas para hacer el boton de favoritos
+
+  /* const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleFavoriteToggle = () => {
+    setIsFavorite(!isFavorite);
+    onFavoriteToggle(singleBook._id, !isFavorite);
+  };
+ */
 
   return (
 
@@ -37,7 +52,10 @@ export default function Book (props) {
                    {singleBook.owner}
                   
                 </p>
-                <p className="text-dark" style={{ paddingTop: "10px" }}><FaRegHeart /></p>
+               {/*  <button className="text-dark" style={{ paddingTop: "10px" }} onClick={handleFavoriteToggle}>
+                    <FaRegHeart color={isFavorite ? 'red' : 'gray'} />
+                </button> */}
+              
               </div>
         <div className="col-md-8 col-lg-6 col-xl-4">
           <div style={{ borderRadius: "15px" }}>

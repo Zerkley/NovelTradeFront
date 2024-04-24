@@ -3,6 +3,8 @@ import './addBook.css';
 import { RiCloseLine } from "react-icons/ri";
 import Modal from 'react-modal';
 import UseGlobalStore from '../../store/store';
+/* import Toast from '../../pages/book/assets/Toast'; */
+
 
     const AddBook = ({ isOpen, onRequestClose }) => {
         const [formData, setFormData] = useState({
@@ -15,10 +17,6 @@ import UseGlobalStore from '../../store/store';
           size: '',
         });
 
-        const years = [];
-         for (let year = 1900; year <= 2024; year++) {
-         years.push(year);
-        }
 
         const variables = UseGlobalStore((state) => state.variables);
         const createUserBook = variables.createUserBook;
@@ -42,10 +40,21 @@ import UseGlobalStore from '../../store/store';
                 formData.size
               );
               onRequestClose(); // Cierra el modal después de enviar los datos
+             /*  handleToast(); // Ejecuta handleToast si se ha enviado correctamente */
             } catch (error) {
               console.error('Error al crear el libro:', error);
             }
           };
+
+
+          // prueba para ver si funciona el toast
+
+        /* const handleToast = () => {
+            return (
+                <Toast message="Libro añadido correctamente 😃" autoClose={5000} />
+            )
+            }; */
+        
            
 
   return (
@@ -114,10 +123,14 @@ import UseGlobalStore from '../../store/store';
           </div>
           <label>
             Año de Publicación:
-            <input type="number" name="publishedYear" value={formData.publishedYear} onChange={handleChange} maxLength={4} />
+            <input type="number" name="publishedYear" value={formData.publishedYear} onChange={handleChange} maxLength="4" />
         
           </label>
-      <button className="btn btn-primary" type="submit">Crear Libro</button>
+          <div>
+          
+          <button className="btn btn-primary" /* onClick={handleToast} */ type="submit">Crear Libro</button>
+          </div>
+      
     </form>
     </div>
   </Modal>

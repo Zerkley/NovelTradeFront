@@ -20,19 +20,19 @@ function Landing() {
             </span>
             <div className="column-container">
                 <div className="column">
-                    <h2>Título 1</h2>
+                    <h2>Intercambia libros, intercambia ideas</h2>
                     <i className="fas fa-star"></i>
-                    <p>Texto breve para la primera columna.</p>
+                    <p>La mejor manera de descubrir nuevos libros y compartir tus favoritos.</p>
                 </div>
                 <div className="column">
-                    <h2>Título 2</h2>
+                    <h2>Únete a la comunidad de amantes de los libros</h2>
                     <i className="fas fa-heart"></i>
-                    <p>Texto breve para la segunda columna.</p>
+                    <p>Conecta con otros lectores y amplía tu biblioteca sin gastar dinero</p>
                 </div>
                 <div className="column">
-                    <h2>Título 3</h2>
+                    <h2>Lee más, gasta menos</h2>
                     <i className="fas fa-check"></i>
-                    <p>Texto breve para la tercera columna.</p>
+                    <p>Una alternativa ecológica y sostenible para disfrutar de la lectura</p>
                 </div>
                 </div>
           </div>

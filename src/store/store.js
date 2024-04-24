@@ -27,8 +27,8 @@ const useGlobalStore = create((set, get) => ({
                 "__v": 0
             },
 
-            setAllNonBooks: (data) => set({ allNonBooks: data }),
-
+            /* setAllNonBooks: (data) => set({ allNonBooks: data }), */
+        
 
         getBooks: async () => {
                 await fetch(`https://noveltradeback.onrender.com/books/all/${get().variables.userId}`,{
