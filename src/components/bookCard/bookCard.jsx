@@ -1,10 +1,26 @@
 import React from "react"
 import useGlobalStore from "../../store/store.js";
 import './bookCard.css';
+import Addbook from "../addBook/AddBook.jsx";
+import { useState } from "react";
 
 
 
 const BookCard = (props) => {
+
+    //codigo para abrir el modal de añadir libro, borrar cuando termine la prueba
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+    // aqui termina el codigo del modal
+
     const variables = useGlobalStore((state) => state.variables);
     
     return (
@@ -29,8 +45,12 @@ const BookCard = (props) => {
            </div>
         </div>
         <div className="buttons">
-            <button className="btn-edit" /*onClick={() => variables.editBook(props.id)}*/>Editar</button>
+            <button className="btn-edit" onClick={openModal} /*onClick={() => variables.editBook(props.id)}*/>Editar</button>
+            <Addbook isOpen={isModalOpen} onRequestClose={closeModal} />
+                
             <button className="btn-edit" onClick={() => variables.deleteBook(props.id)}>Eliminar</button>
+
+    
         </div>  
     </div>
 

@@ -1,7 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import UseGlobalStore from "../../store/store.js";
 import './profilePage.css';
 import BookCard from "../../components/bookCard/bookCard.jsx";
+import Addbook from "../../components/addBook/AddBook.jsx";
+import EditUser from "../../components/editUser/editUser.jsx";
+
 
 
 const ProfilePage = (props) => {
@@ -10,6 +13,19 @@ const ProfilePage = (props) => {
     const profileInfo = variables.person;
     const userBooks = variables.userBooks;
     // const editUser = variables.editUser();
+
+    //codigo para abrir el modal de añadir libro, borrar cuando termine la prueba
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+    // aqui termina el codigo del modal
   
     useEffect( () => {
       console.log(variables.userId)
@@ -30,9 +46,13 @@ const ProfilePage = (props) => {
               <p className="card-info">✆ {profileInfo.phoneNumber}</p>
               <p className="card-info">📫 {profileInfo.city}</p>
             </div>  
-            <button className="btn-edit" onClick={() => variables.editUser(props.id)}>Editar</button>
+            <button className="btn-edit" onClick={openModal}>Editar
+              <EditUser isOpen={isModalOpen} onRequestClose={closeModal} />
+            </button>
         </div>
-        <button className="btn-edit" >+ Añade un libro</button>
+            <button className="btn-edit" onClick={openModal} >+ Añade un libro
+              <Addbook isOpen={isModalOpen} onRequestClose={closeModal} />
+            </button>
       
         <div className="books-in-profile">
         {userBooks === null || userBooks?.length === 0 ? (  

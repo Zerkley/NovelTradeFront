@@ -1,0 +1,83 @@
+.Modal {
+    background-color: rgba(0, 0, 0, 0.5); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ModalContent {
+    width: 800px; 
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #d1dbe0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 16px;
+    margin-bottom: 16px;
+    margin-top: 24px;
+
+  }
+  
+  .ModalCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .ModalCloseButton:hover {
+    background-color: #ff3333; 
+  }
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+  
+label {
+    display: block; 
+    margin-bottom: 10px; 
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 10px; 
+  }
+
+  select {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px;
+  }
+
+.groupInput {
+    display: flex;
+    gap: 2px; /* Espacio entre los inputs */
+  }
+  
+.inputGroup label {
+    flex: 1; /* Los labels ocupan el mismo ancho dentro del contenedor */
+  }
+  
+.inputGroup select {
+    width: 100%; /* Los select ocupan todo el ancho disponible */
+  }

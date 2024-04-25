@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './addBook.css';
-import { RiCloseLine } from "react-icons/ri";
 import Modal from 'react-modal';
 import UseGlobalStore from '../../store/store';
 /* import Toast from '../../pages/book/assets/Toast'; */
