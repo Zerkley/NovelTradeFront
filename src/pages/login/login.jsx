@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UseGlobalStore from "../../store/store";
 import "animate.css";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import "./login.css";
 
 const Login = () => {
  
-  const token = UseGlobalStore((state) => state.variables.token);
+  
   const crearUsuario = UseGlobalStore(
     (state) => state.variables.getCrearUsuario
   );
