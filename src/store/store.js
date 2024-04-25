@@ -61,8 +61,7 @@ const UseGlobalStore = create((set, get) => ({
         __v: 0,
       },
     ],
-  },
-  functions: {
+
     getCrearUsuario: async (email, password) => {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
@@ -125,10 +124,6 @@ const UseGlobalStore = create((set, get) => ({
             alert("Hubo un error al procesar la solicitud");
           });
       },
-      
-      
-      
-
   },
 }));
 
