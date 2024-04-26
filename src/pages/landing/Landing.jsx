@@ -8,7 +8,7 @@ function Landing() {
 
         
         <div className="HeroSection light hero">
-        <img src="https://img.freepik.com/premium-vector/book-exchange-landing-page-template-bookcrossing-vector-illustration-banner-education-knowledge-concept-diverse-hands-holding-books-swap-literature-event-library-day-culture-festival_534430-1064.jpg" />
+        <img className="hero-image" src="https://img.freepik.com/premium-vector/book-exchange-landing-page-template-bookcrossing-vector-illustration-banner-education-knowledge-concept-diverse-hands-holding-books-swap-literature-event-library-day-culture-festival_534430-1064.jpg" />
           <div className="heroInner">
             <span>
               <h1>Bienvenidos a NovelTrade</h1>

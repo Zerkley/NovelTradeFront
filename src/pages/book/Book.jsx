@@ -60,7 +60,7 @@ export default function Book (props) {
         <div className="col-md-8 col-lg-6 col-xl-4">
           <div style={{ borderRadius: "15px" }}>
           <img
-                        src="https://cdn.wallapop.com/images/10420/gj/ou/__/c10420p1000530357/i4861653056.jpg"
+                        src="https://iili.io/JUavKve.md.jpg"
                         className="book-img-top"
                         style={{ width: '20rem' }}
                         alt="..."

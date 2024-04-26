@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './catalog.css';
 import useGlobalStore from '../../store/store';
 import { Link } from "react-router-dom";
@@ -13,12 +13,33 @@ export default function Catalog() {
     }, []) 
 
 
+    //pruebas de filtro
+
+    const [search, setSearch] = useState ("")
+
+    const searcher = (e) => {
+        setSearch(e.target.value)
+        console.log(e.target.value)
+    }
+
+    let results = []
+        if (!search)
+        {
+            results = allBooks
+        } else {
+
+            results = allBooks.filter((item) => 
+            item.title.toLowerCase().includes(search.toLocaleLowerCase()) || item.author.toLowerCase().includes(search.toLocaleLowerCase())
+            )}
+
   return (
 
     <div className="container row">
          <h1 className="text-danger my-title">Libros disponibles</h1>
+
+            <input value={search} onChange={searcher} type="text" placeholder='Busca tu libro o autor favorito' className="form-control"></input>
             <div className="d-flex"> 
-            {allBooks?.map((item, index) => {
+            {results?.map((item, index) => {
                 return (
                     <Link to="/book">
                     <div
@@ -27,7 +48,7 @@ export default function Catalog() {
                     key={index}
                 >
                     <img
-                        src="https://cdn.wallapop.com/images/10420/gj/ou/__/c10420p1000530357/i4861653056.jpg?pictureSize=W640"
+                        src="https://iili.io/JUawpft.md.jpg?pictureSize=W640"
                         className="card-img-top"
                         style={{ width: '16rem' }}
                         alt="..."

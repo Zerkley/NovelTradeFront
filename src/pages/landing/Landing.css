@@ -39,6 +39,11 @@ body {
   
   }
 
+.HeroSection img {
+    height: 100px !important;
+    float: none;
+}
+
   .column-container {
     display: flex; 
     justify-content: center; 

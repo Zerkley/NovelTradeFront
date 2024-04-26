@@ -51,7 +51,9 @@ h2{font-weight: 900}
 
 .book-img-top{width: 100%;
              object-fit: cover;
-             padding: 16px}
+             padding: 16px;
+             height: 100% !important;
+             float: none;}
 
              
 .card h2{font-size: 1rem}
